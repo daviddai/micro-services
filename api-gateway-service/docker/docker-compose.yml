@@ -1,0 +1,35 @@
+version : '2'
+services:
+  api-gateway-service:
+    container_name: api-gateway-service
+    tty: true
+    build: .
+    ports:
+    - "8084:8084"
+    - "4084:4084"
+    networks:
+    - net-spring-micro-services
+    volumes:
+    - ../build/libs:/vol/development/
+
+#    depends_on:
+#      - mysqldbserver
+
+#  mysqldbserver:
+#    build:
+#      context: .
+#      dockerfile: mysqldb.dockerfile
+#    ports:
+#      - "3306:3306"
+#    networks:
+#      - net-spring-db
+#    environment:
+#      MYSQL_DATABASE: testdb
+#      MYSQL_USER: myuser
+#      MYSQL_PASSWORD: mypassword
+#      MYSQL_ROOT_PASSWORD: myrootpassword
+#    container_name: mysqldbserver
+
+networks:
+  net-spring-micro-services:
+    driver: bridge

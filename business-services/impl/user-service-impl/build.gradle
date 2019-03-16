@@ -1,0 +1,10 @@
+apply plugin: 'org.springframework.boot'
+
+bootJar {
+    baseName = 'user-service-impl'
+    version = '1.0-SNAPSHOT'
+}
+
+dependencies {
+    compile project(":business-services:api:user-service")
+}

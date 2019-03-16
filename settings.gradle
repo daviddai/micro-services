@@ -1,0 +1,12 @@
+rootProject.name = 'micro-services'
+
+include 'eureka-service'
+
+include 'business-services:api:user-service'
+include 'business-services:impl:user-service-impl'
+
+include 'business-services:api:ticket-service'
+include 'business-services:impl:ticket-service-impl'
+
+include 'api-gateway-service'
+
