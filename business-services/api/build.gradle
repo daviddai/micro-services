@@ -1,6 +1,6 @@
 subprojects {
     dependencies {
         compile group: 'org.springframework', name: 'spring-webmvc', version: '5.1.5.RELEASE'
-        compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-feign', version: '1.4.6.RELEASE'
+        compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '2.1.1.RELEASE'
     }
 }

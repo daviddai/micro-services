@@ -2,7 +2,6 @@ package com.micro.services.api.gateway.service.controller;
 
 import com.micro.services.api.gateway.service.client.ticketservice.TicketServiceHealthCheckClient;
 import com.micro.services.api.gateway.service.client.userservice.UserServiceHealthCheckClient;
-import com.micro.services.user.service.impl.controller.HealthCheckController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
