@@ -6,7 +6,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @FeignClient(
-        value = "ticketServiceClient",
+        // name has to be exactly the same the service name registered in Eureka
+        name = "ticket-service-client",
         fallback = TicketServiceHealthCheckClient.TicketServiceHealthCheckClientFallback.class
 )
 public interface TicketServiceHealthCheckClient extends HealthCheckController {

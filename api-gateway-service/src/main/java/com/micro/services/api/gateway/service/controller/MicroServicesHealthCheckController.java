@@ -21,16 +21,16 @@ public class MicroServicesHealthCheckController {
     public String checkAllApisHealthStatus() {
         String healthCheckSummary;
 
-        if (userServiceHealthCheckClient.ping().equals("pong")) {
-            healthCheckSummary = "User service: alive";
-        } else {
-            healthCheckSummary = "User service: dead";
+        if (ticketServiceHealthCheckClient.ping().equals("pong")) {
+            healthCheckSummary = "Ticket service: alive";
+        } else  {
+            healthCheckSummary = "Ticket service: dead";
         }
 
-        if (ticketServiceHealthCheckClient.ping().equals("pong")) {
-            healthCheckSummary += "\nTicket service: alive";
-        } else  {
-            healthCheckSummary += "\nTicket service: dead";
+        if (userServiceHealthCheckClient.ping().equals("pong")) {
+            healthCheckSummary += "\nUser service: alive";
+        } else {
+            healthCheckSummary += "\nUser service: dead";
         }
 
         return healthCheckSummary;
