@@ -12,3 +12,6 @@ eureka:
     fetchRegistry: true
   instance:
     preferIpAddress: true
+logging:
+  level:
+    com.demo.service.client.WeatherServiceHealthCheckClient: DEBUG
