@@ -1,5 +1,6 @@
 package com.micro.services.api.gateway.service.client.ticketservice;
 
+import com.micro.services.api.gateway.service.config.FeignClientConfiguration;
 import com.micro.services.ticket.service.controller.HealthCheckController;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
@@ -8,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @FeignClient(
         // name has to be exactly the same the service name registered in Eureka
         name = "ticket-service-client",
-        fallback = TicketServiceHealthCheckClient.TicketServiceHealthCheckClientFallback.class
+        fallback = TicketServiceHealthCheckClient.TicketServiceHealthCheckClientFallback.class,
+        configuration = FeignClientConfiguration.class
 )
 public interface TicketServiceHealthCheckClient extends HealthCheckController {
 
