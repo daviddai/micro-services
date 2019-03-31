@@ -3,12 +3,16 @@ package com.micro.services.api.gateway.service.controller;
 import com.micro.services.api.gateway.service.client.ticketservice.TicketServiceHealthCheckClient;
 import com.micro.services.api.gateway.service.client.userservice.UserServiceHealthCheckClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
-@RequestMapping("/micro-services/health")
+@RequestMapping("/health")
 public class MicroServicesHealthCheckController {
 
     @Autowired
@@ -17,23 +21,23 @@ public class MicroServicesHealthCheckController {
     private TicketServiceHealthCheckClient ticketServiceHealthCheckClient;
 
 
-    @GetMapping(value = "/summary")
-    public String checkAllApisHealthStatus() {
-        String healthCheckSummary;
+    @GetMapping(value = "/summary", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Map<String, String> checkAllApisHealthStatus() {
+        Map<String, String> healthCheckSummaries = new HashMap<>();
 
         if (ticketServiceHealthCheckClient.ping().equals("pong")) {
-            healthCheckSummary = "Ticket service: alive";
+            healthCheckSummaries.put("ticket-service", "alive");
         } else  {
-            healthCheckSummary = "Ticket service: dead";
+            healthCheckSummaries.put("ticket-service", "dead");
         }
 
         if (userServiceHealthCheckClient.ping().equals("pong")) {
-            healthCheckSummary += "\nUser service: alive";
+            healthCheckSummaries.put("user-service", "alive");
         } else {
-            healthCheckSummary += "\nUser service: dead";
+            healthCheckSummaries.put("user-service", "dead");
         }
 
-        return healthCheckSummary;
+        return healthCheckSummaries;
     }
 
 }

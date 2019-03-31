@@ -3,6 +3,8 @@ spring:
     name: api-gateway-service
 server:
   port: 8084
+  servlet:
+    contextPath: /api/gateway
 eureka:
   client:
     serviceUrl:
