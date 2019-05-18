@@ -12,3 +12,8 @@ eureka:
     fetchRegistry: true
   instance:
     preferIpAddress: true
+
+logging:
+  level:
+    com.micro.services.api.gateway.service.client.ticketservice.TicketServiceHealthCheckClient: debug
+    com.micro.services.api.gateway.service.client.userservice.UserServiceHealthCheckClient: debug
