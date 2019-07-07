@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: product-content-service-client
+server:
+  port: 8083
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://eureka-service:8761/eureka}
+  instance:
+    preferIpAddress: true

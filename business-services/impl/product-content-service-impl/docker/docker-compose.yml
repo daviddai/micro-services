@@ -1,0 +1,35 @@
+version : '2'
+services:
+  product-content-service:
+    container_name: product-content-service
+    tty: true
+    build: .
+    ports:
+    - "8083:8083"
+    - "4083:4083"
+    networks:
+    - net-spring-micro-services
+    volumes:
+    - ../build/libs:/vol/development/
+
+#    depends_on:
+#      - mysqldbserver
+
+#  mysqldbserver:
+#    build:
+#      context: .
+#      dockerfile: mysqldb.dockerfile
+#    ports:
+#      - "3306:3306"
+#    networks:
+#      - net-spring-db
+#    environment:
+#      MYSQL_DATABASE: testdb
+#      MYSQL_USER: myuser
+#      MYSQL_PASSWORD: mypassword
+#      MYSQL_ROOT_PASSWORD: myrootpassword
+#    container_name: mysqldbserver
+
+networks:
+  net-spring-micro-services:
+    driver: bridge

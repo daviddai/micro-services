@@ -15,5 +15,5 @@ eureka:
 
 logging:
   level:
-    com.micro.services.api.gateway.service.client.ticketservice.TicketServiceHealthCheckClient: debug
-    com.micro.services.api.gateway.service.client.userservice.UserServiceHealthCheckClient: debug
+    com.micro.services.api.gateway.service.client.product_content_service.ProductContentServiceHealthCheckClient: debug
+    com.micro.services.api.gateway.service.client.user_service.UserServiceHealthCheckClient: debug

@@ -5,8 +5,8 @@ include 'eureka-service'
 include 'business-services:api:user-service'
 include 'business-services:impl:user-service-impl'
 
-include 'business-services:api:ticket-service'
-include 'business-services:impl:ticket-service-impl'
+include 'business-services:api:product-content-service'
+include 'business-services:impl:product-content-service-impl'
 
 include 'api-gateway-service'
 

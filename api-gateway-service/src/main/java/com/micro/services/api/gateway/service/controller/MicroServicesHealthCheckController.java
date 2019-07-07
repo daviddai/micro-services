@@ -1,7 +1,7 @@
 package com.micro.services.api.gateway.service.controller;
 
-import com.micro.services.api.gateway.service.client.ticketservice.TicketServiceHealthCheckClient;
-import com.micro.services.api.gateway.service.client.userservice.UserServiceHealthCheckClient;
+import com.micro.services.api.gateway.service.client.product_content_service.ProductContentServiceHealthCheckClient;
+import com.micro.services.api.gateway.service.client.user_service.UserServiceHealthCheckClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,17 +18,17 @@ public class MicroServicesHealthCheckController {
     @Autowired
     private UserServiceHealthCheckClient userServiceHealthCheckClient;
     @Autowired
-    private TicketServiceHealthCheckClient ticketServiceHealthCheckClient;
+    private ProductContentServiceHealthCheckClient productContentServiceHealthCheckClient;
 
 
     @GetMapping(value = "/summary", produces = MediaType.APPLICATION_JSON_VALUE)
     public Map<String, String> checkAllApisHealthStatus() {
         Map<String, String> healthCheckSummaries = new HashMap<>();
 
-        if (ticketServiceHealthCheckClient.ping().equals("pong")) {
-            healthCheckSummaries.put("ticket-service", "alive");
+        if (productContentServiceHealthCheckClient.ping().equals("pong")) {
+            healthCheckSummaries.put("product-content-service", "alive");
         } else  {
-            healthCheckSummaries.put("ticket-service", "dead");
+            healthCheckSummaries.put("product-content-service", "dead");
         }
 
         if (userServiceHealthCheckClient.ping().equals("pong")) {
