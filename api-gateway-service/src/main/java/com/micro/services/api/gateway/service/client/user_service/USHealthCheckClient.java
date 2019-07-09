@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @FeignClient(
         // name has to be exactly the same the service name registered in Eureka
         name = "user-service-client",
-        fallback = UserServiceHealthCheckClient.UserServiceHealthCheckClientFallback.class,
+        fallback = USHealthCheckClient.UserServiceHealthCheckClientFallback.class,
         configuration = FeignClientConfiguration.class
 )
-public interface UserServiceHealthCheckClient extends HealthCheckController {
+public interface USHealthCheckClient extends HealthCheckController {
 
     @RequestMapping(value = "/user-service-health-check-fallback")
     @Component
