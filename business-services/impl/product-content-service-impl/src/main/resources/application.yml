@@ -1,6 +1,6 @@
 spring:
   application:
-    name: product-content-service-client
+    name: product-content-service
 server:
   port: 8083
 eureka:
