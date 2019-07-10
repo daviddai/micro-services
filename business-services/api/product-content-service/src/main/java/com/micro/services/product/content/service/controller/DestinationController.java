@@ -1,6 +1,6 @@
 package com.micro.services.product.content.service.controller;
 
-import com.micro.services.product.content.service.model.HeroSlider;
+import com.micro.services.product.content.service.model.TopDestination;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/hero-slider")
-public interface HeroSliderController {
+@RequestMapping(value = "/destination")
+public interface DestinationController {
 
-    @GetMapping
-    List<HeroSlider> getHeroSliders();
+    @GetMapping(value = "/top")
+    List<TopDestination> getTopDestinations();
 
 }
