@@ -18,14 +18,10 @@ public class DestinationControllerImpl implements DestinationController {
     @GetMapping(value = "/top")
     public List<TopDestination> getTopDestinations() {
         List<String> topDestinationNames = Arrays.asList(
-                "Tokyo",
-                "Sydney",
-                "New York",
-                "Hong Kong",
-                "London",
-                "Las Vegas",
-                "Singapore",
-                "Shanghai"
+                "Tokyo", "Sydney", "New York", "Hong Kong",
+                "London", "Las Vegas", "Singapore", "Shanghai",
+                "Kyoto", "Osaka", "Beijing", "Bali",
+                "Phuket", "Zurich", "Forssa", "Rome"
         );
 
         List<String> topDestinationImageUrls = Arrays.asList(
@@ -36,7 +32,15 @@ public class DestinationControllerImpl implements DestinationController {
                 "https://cdn.londonandpartners.com/visit/general-london/areas/river/76709-640x360-houses-of-parliament-and-london-eye-on-thames-from-above-640.jpg",
                 "http://res.cloudinary.com/simpleview/image/upload/v1497480003/clients/lasvegas/strip_b86ddbea-3add-4995-b449-ac85d700b027.jpg",
                 "https://smemagazine.asia/en/wp-content/uploads/2019/06/20190610-SME-Website-Singapore-Among-Easiest-Business-Places-Image.jpg",
-                "https://singularityhub.com/wp-content/uploads/2018/03/innovators-city-guide-shanghai-china-skyline-night-214399000.jpg"
+                "https://singularityhub.com/wp-content/uploads/2018/03/innovators-city-guide-shanghai-china-skyline-night-214399000.jpg",
+                "https://photos.smugmug.com/Kyoto/Honeymoon-in-Kyoto/i-LdmsJPZ/0/26b66d84/XL/shutterstock_626644001-XL.jpg",
+                "https://www.jnto.go.jp/ph/spot-activity/wp-content/uploads/sites/2/2018/10/OC-Cherry-Blossom-01.jpg",
+                "https://www.tripsavvy.com/thmb/GO2tYbWXqp9vtSJefM8vxFpaL0k=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-4894349271-59e8e9a8d088c000119103c6.jpg",
+                "http://static.asiawebdirect.com/m/bangkok/portals/bali-indonesia-com/homepage/first-time-bali/pagePropertiesImage/bali-first-time.jpg.jpg",
+                "https://dak95nwic4sny.cloudfront.net/73/thailand-40155070-1508147260-ImageGalleryLightboxLarge.jpg",
+                "https://btcnn.com/wp-content/uploads/2018/11/swiss-bank.jpg",
+                "https://www.flashpack.com/wp-content/uploads/2018/10/Glamping-Finland-Northern-Lights-Tour-1.jpg",
+                "https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg"
         );
 
         List<TopDestination> topDestinations = new ArrayList<>();
